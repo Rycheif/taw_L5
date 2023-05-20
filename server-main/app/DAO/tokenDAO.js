@@ -17,7 +17,7 @@ const tokenSchema = new mongoose.Schema({
   type: { type: String, enum: tokenTypes, required: true },
   value: { type: String, required: true }
 }, {
-  collection: 'token'
+  collection: '34267-token'
 });
 
 const TokenModel = mongoose.model('token', tokenSchema);

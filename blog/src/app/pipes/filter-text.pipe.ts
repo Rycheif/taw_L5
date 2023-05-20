@@ -1,5 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import {Post} from "../components/blog-item/blog-item.component";
+
+import {Post} from "../models/post";
 
 @Pipe({
   name: 'filter'

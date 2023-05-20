@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Post} from "../components/blog-item/blog-item.component";
+
+import {Post} from "../models/post";
 
 @Injectable({
   providedIn: 'root'
@@ -18,9 +19,13 @@ export class DataService {
   }
 
   getById(id: string): Observable<Post> {
-    console.log(id);
     return this.http.get<Post>(this.url + '/api/posts/' + id);
   }
 
+  createNewPost(newPost: Post)
+  {
+    console.log(newPost);
+    return this.http.post<Post>(this.url + '/api/posts', newPost);
+  }
 
 }

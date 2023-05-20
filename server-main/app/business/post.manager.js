@@ -1,34 +1,36 @@
-import postDAO from '../DAO/postDAO';
+import postDAO from "../DAO/postDAO";
 
 function create(context) {
+
     async function query() {
-        let result = postDAO.query();
+        const result = await postDAO.query();
         if (result) {
             return result;
         }
     }
 
     async function get(id) {
-        let result = await postDAO.get(id);
+        const result = await postDAO.get(id);
         if (result) {
             return result;
         }
     }
 
     async function createNewOrUpdate(data) {
-        let result = await postDAO.createNewOrUpdate(data);
+        const result = await postDAO.createNewOrUpdate(data);
         if (result) {
             return result;
         }
     }
 
     return {
-        query: query,
-        get: get,
-        createNewOrUpdate: createNewOrUpdate,
-    };
+        query,
+        get,
+        createNewOrUpdate
+    }
+
 }
 
 export default {
-    create: create
+    create
 };

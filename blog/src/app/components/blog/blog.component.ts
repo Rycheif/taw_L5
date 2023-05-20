@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {DataService} from "../../services/data.service";
-import {Post} from "../blog-item/blog-item.component";
+
+import {Post} from "../../models/post";
 
 @Component({
   selector: 'blog',

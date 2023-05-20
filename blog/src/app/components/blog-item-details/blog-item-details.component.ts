@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {DataService} from "../../services/data.service";
 import {ActivatedRoute, ParamMap} from "@angular/router";
-import {Post} from "../blog-item/blog-item.component";
+
+import {Post} from "../../models/post";
 
 @Component({
   selector: 'blog-item-details',

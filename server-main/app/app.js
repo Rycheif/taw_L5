@@ -18,10 +18,7 @@ app.use(express.static('public'));
 app.use(cors());
 
 mongoose.connect(config.databaseUrl, {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true
+    useNewUrlParser: true
 }, (error) => {
     if (error) {
         console.error(error);

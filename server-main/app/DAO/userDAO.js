@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema({
   active: { type: Boolean, default: true, required: false },
   isAdmin: { type: Boolean, default: true, required: false }
 }, {
-  collection: 'user'
+  collection: '34267-user'
 });
 
 userSchema.plugin(uniqueValidator);

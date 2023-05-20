@@ -1,12 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 
-export interface Post {
-  title: string;
-  text:  string;
-  image: string;
-  id:    string;
-}
-
 @Component({
   selector: 'blog-item',
   templateUrl: './blog-item.component.html',

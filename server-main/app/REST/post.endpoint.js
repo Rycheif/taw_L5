@@ -1,34 +1,26 @@
 import business from '../business/business.container';
 
-const postEndpoint = (router) => {
+const  postEndpoint = (router) => {
+
     router.get('/api/posts', async (request, response, next) => {
         try {
-            let result = await business.getPostManager().query();
+            const result = await business.getPostManager().query();
             response.status(200).send(result);
-        } catch (error) {
-            console.log(error);
-        }
-    });
-
-    router.get('/api/posts/:id', async (request, response, next) => {
-        try {
-            const id = request.params.id
-            console.log(id);
-            let result = await business.getPostManager().get(id);
-            response.status(200).send(result);
-        } catch (error) {
-            console.log(error);
+        } catch (e) {
+            console.error(e);
         }
     });
 
     router.post('/api/posts', async (request, response, next) => {
         try {
-            let result = await business.getPostManager().createNewOrUpdate(request.body);
-            response.status(200).send(result);
-        } catch (error) {
-            console.log(error);
+            console.log('request.body');
+            const result = await business.getPostManager().createNewOrUpdate(request.body)
+            response.status(201).send(result);
+        } catch (e) {
+            console.error(e);
         }
     });
 
-};
+}
+
 export default postEndpoint;
